@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Bebas_Neue, Rajdhani } from "next/font/google";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const bebas = Bebas_Neue({ weight: "400", subsets: ["latin"], variable: "--font-bebas" });
@@ -14,19 +15,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${inter.variable} ${bebas.variable} ${rajdhani.variable} font-sans`}
-      >
+      <body className={`${inter.variable} ${bebas.variable} ${rajdhani.variable} font-sans`}>
         <div className="min-h-screen flex flex-col">
-          {/* Header */}
-          <header className="sticky top-0 z-40 backdrop-blur bg-bg/70 border-b border-white/5">
-            <div className="mx-auto max-w-6xl px-4 h-14 flex items-center justify-between">
-              <div className="font-display text-2xl tracking-wide">MATCHDAY</div>
-              <nav className="text-text/80 text-sm">
-                lançamentos • retrô • clubes
-              </nav>
-            </div>
-          </header>
+          {/* Header externo */}
+          <Header />
 
           {/* Conteúdo */}
           <main className="flex-1 mx-auto w-full max-w-6xl px-4 py-8">
